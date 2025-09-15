@@ -17,6 +17,8 @@ public class HomePage {
 	
 	@FindBy(xpath="//a[@data-toggle='dropdown']") private WebElement admin;
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']") private WebElement logout;
+	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']/i[@class='fas fa-arrow-circle-right']") private WebElement adminuser;
+
 	
 	public void clickOnAdmin() {
 		
@@ -26,6 +28,12 @@ public class HomePage {
 	public void clickOnLogout() {
 		
 		logout.click();
+	}
+	
+
+	public void clickOnAdminUsers() {
+		
+		adminuser.click();
 	}
 	
 

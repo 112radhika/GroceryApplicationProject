@@ -20,8 +20,9 @@ public class AdminUserTest extends Base {
 		loginpage.enterUsernameOnUsernameField(usernameValue); //calling methods from pageclass : LoginPage
 		loginpage.enterPasswordOnPasswordField(passwordValue);
 		loginpage.clickOnLoginButton();
+		HomePage homepage = new HomePage(driver);
+		homepage.clickOnAdminUsers();
 		AdminUserPage adminpage = new AdminUserPage(driver);
-		adminpage.clickOnAdminUsers();
 		adminpage.clickOnNewButton();
 		adminpage.enterUsernameForNewUser("Qsera1");
 		adminpage.enterPasswordForNewUser("Qsera123");
@@ -37,8 +38,9 @@ public class AdminUserTest extends Base {
 		loginpage.enterUsernameOnUsernameField(usernameValue); //calling methods from pageclass : LoginPage
 		loginpage.enterPasswordOnPasswordField(passwordValue);
 		loginpage.clickOnLoginButton();
+		HomePage homepage = new HomePage(driver);
+		homepage.clickOnAdminUsers();
 		AdminUserPage adminpage = new AdminUserPage(driver);
-		adminpage.clickOnAdminUsers();
 		adminpage.clickOnSearch();
 		adminpage.enterUsernameOnSearch("Qsera1");
 		adminpage.clickOnSearchSubmit();
@@ -54,8 +56,9 @@ public class AdminUserTest extends Base {
 		loginpage.enterUsernameOnUsernameField(usernameValue); //calling methods from pageclass : LoginPage
 		loginpage.enterPasswordOnPasswordField(passwordValue);
 		loginpage.clickOnLoginButton();
+		HomePage homepage = new HomePage(driver);
+		homepage.clickOnAdminUsers();
 		AdminUserPage adminpage = new AdminUserPage(driver);
-		adminpage.clickOnAdminUsers();
 		adminpage.clickOnResetButton();
 		
 	}

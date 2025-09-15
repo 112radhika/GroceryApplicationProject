@@ -17,7 +17,6 @@ public class AdminUserPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']/i[@class='fas fa-arrow-circle-right']") private WebElement adminuser;
 	@FindBy(xpath="//a[@onclick='click_button(1)']") private WebElement newbutton;
 	@FindBy(id="username") private WebElement newusername;
 	@FindBy(id="password") private WebElement newpassword;
@@ -29,22 +28,7 @@ public class AdminUserPage {
 	@FindBy(name="Search") private WebElement searchsubmit;
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='btn btn-rounded btn-warning']") private WebElement resetbutton;
 	
-	//@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") private WebElement usercreationtext;
-	//@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']") private WebElement userexisttext;
-	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']/tbody/tr[1]") private WebElement tablecontent;
-	@FindBy(xpath = "//span[@class='badge bg-success']") private WebElement useractivestatus;
-	@FindBy(xpath="//a[@title='Show Details']") private WebElement clickpassword;
-	@FindBy(xpath="//div[@class='profile-info-name']") private WebElement checkpassword;
-	@FindBy(xpath="//a[@role='button' and @class='btn btn-sm btn btn-success btncss']") private WebElement lockbutton;
-	@FindBy(xpath = "//span[@class='badge bg-warning']") private WebElement userinactivestatus;
-	@FindBy(xpath="//a[@role='button' and @class='btn btn-sm btn btn-danger btncss']") private WebElement deletebutton;
-	
-	
-	public void clickOnAdminUsers() {
 		
-		adminuser.click();
-	}
-	
 	public void clickOnNewButton() {
 		newbutton.click();
 	}
