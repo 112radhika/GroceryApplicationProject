@@ -12,7 +12,7 @@ import utilities.ExcelUtility;
 public class HomeTest extends Base {
 	
 	@Test
-	public void verifyUserLoginWithValidCredentials() throws IOException {
+	public void verifyUserIsAbleToLogout() throws IOException {
 		String usernameValue = ExcelUtility.getStringData(0,0,"LoginPage");//getting the usernameValue value from excel
 		String passwordValue = ExcelUtility.getStringData(0,1,"LoginPage");// getting the passwordValue value from excel
 		LoginPage loginpage = new LoginPage(driver);

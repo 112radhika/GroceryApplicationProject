@@ -21,18 +21,18 @@ public class Base {
 		driver.get("https://groceryapp.uniqassosiates.com/admin/login"); 
 		driver.manage().window().maximize();
 	}
-	//ITestResult - interface - decides whether pass of fail or skipped case
+	//ITestResult - interface - that stores test execution details
 	@AfterMethod
 	public void driverQuit(ITestResult iTestResult) throws IOException {
 
-		if (iTestResult.getStatus() == ITestResult.FAILURE) { //getStatus () - Failure/Pass/Skip
+		if (iTestResult.getStatus() == ITestResult.FAILURE) { //getStatus () - Failed/Passed/Skipped
 
 		ScreenshotUtility screenShot = new ScreenshotUtility();
 		screenShot.getScreenshot(driver, iTestResult.getName());
 		}
 		//driver.quit();
 
-		}
+	}
 	
 
 }
