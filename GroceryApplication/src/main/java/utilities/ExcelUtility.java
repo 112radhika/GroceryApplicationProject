@@ -10,9 +10,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtility {
 	
-	static FileInputStream f; //excel file 
-	static XSSFWorkbook w; //Book1 //Filename
-	static XSSFSheet s;// sheets //Sheet name
+	static FileInputStream f; //used to read excel file 
+	static XSSFWorkbook w; //Book1 //Filename //Represents the entire Excel file (Workbook)
+	static XSSFSheet s;// sheets //Sheet name // Represents a specific Sheet in the workbook.
 
 	public static String getStringData(int a,int b, String sheet) throws IOException {
 		// a is row ,b is column or cell, sheet is name of the sheet in the excel
@@ -22,7 +22,7 @@ public class ExcelUtility {
 		s=w.getSheet(sheet);
 		XSSFRow r=s.getRow(a);
 		XSSFCell c=r.getCell(b);
-		return c.getStringCellValue(); //inbuilt method for excelsheet connection
+		return c.getStringCellValue(); //inbuilt method for excelsheet connection. Returns the value from the cell as a String.
 	
 	}
 

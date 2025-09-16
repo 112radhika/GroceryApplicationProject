@@ -9,6 +9,7 @@ import pages.AdminUserPage;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
+import utilities.RandomDataUtility;
 
 public class AdminUserTest extends Base {
 	
@@ -23,9 +24,12 @@ public class AdminUserTest extends Base {
 		HomePage homepage = new HomePage(driver);
 		homepage.clickOnAdminUsers();
 		AdminUserPage adminpage = new AdminUserPage(driver);
+		RandomDataUtility randomdata = new RandomDataUtility();
 		adminpage.clickOnNewButton();
-		adminpage.enterUsernameForNewUser("Qsera1");
-		adminpage.enterPasswordForNewUser("Qsera123");
+		String newUsername = randomdata.randomUsername(); //entering username using faker class
+		String newPassword = randomdata.randomPassword(); //entering password using faker class
+		adminpage.enterUsernameForNewUser(newUsername);
+		adminpage.enterPasswordForNewUser(newPassword);
 		adminpage.selectUserTypeForNewUser();
 		adminpage.clickOnSaveNewUser();		
 	}
@@ -40,12 +44,13 @@ public class AdminUserTest extends Base {
 		loginpage.clickOnLoginButton();
 		HomePage homepage = new HomePage(driver);
 		homepage.clickOnAdminUsers();
+		String newUsername = ExcelUtility.getStringData(0,0,"AdminUserPage");
 		AdminUserPage adminpage = new AdminUserPage(driver);
 		adminpage.clickOnSearch();
-		adminpage.enterUsernameOnSearch("Qsera1");
+		//adminpage.enterUsernameOnSearch("Qsera1");
+		adminpage.enterUsernameForNewUser(newUsername);
 		adminpage.clickOnSearchSubmit();
-		
-		
+			
 	}
 	
 	@Test
@@ -62,9 +67,6 @@ public class AdminUserTest extends Base {
 		adminpage.clickOnResetButton();
 		
 	}
+		
 	
-	
-	
-	
-
 }

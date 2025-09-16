@@ -9,7 +9,7 @@ public class RandomDataUtility {
 	public String randomUsername() {
 		
 		return faker.name().username(); //creates random username
-				
+		
 	}
 	
 	public String randomPassword() {
@@ -29,7 +29,6 @@ public class RandomDataUtility {
 		return faker.name().fullName(); //creates random full name
 			
 	}
-	
 	
 
 }
