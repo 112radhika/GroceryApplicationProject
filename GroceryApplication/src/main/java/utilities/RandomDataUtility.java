@@ -27,7 +27,7 @@ public class RandomDataUtility {
 	public String randomFullname() {
 		
 		return faker.name().fullName(); //creates random full name
-			
+		
 	}
 	
 

@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-16T11:24:13 IST" name="Default suite" finished-at="2025-09-16T11:24:23 IST" duration-ms="10027">
+  <suite started-at="2025-09-18T00:20:54 IST" name="Default suite" finished-at="2025-09-18T00:20:59 IST" duration-ms="5352">
     <groups>
     </groups>
-    <test started-at="2025-09-16T11:24:13 IST" name="Default test" finished-at="2025-09-16T11:24:23 IST" duration-ms="10027">
+    <test started-at="2025-09-18T00:20:54 IST" name="Default test" finished-at="2025-09-18T00:20:59 IST" duration-ms="5352">
       <class name="testscripts.AdminUserTest">
-        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:testscripts.AdminUserTest@7e6f74c]" started-at="2025-09-16T11:24:13 IST" name="initializeBrowser" finished-at="2025-09-16T11:24:18 IST" duration-ms="5079" status="PASS">
+        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:testscripts.AdminUserTest@7e6f74c]" started-at="2025-09-18T00:20:54 IST" name="initializeBrowser" finished-at="2025-09-18T00:20:56 IST" duration-ms="2643" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyUserIsAbleToAddNewUser()[pri:0, instance:testscripts.AdminUserTest@7e6f74c]" started-at="2025-09-16T11:24:18 IST" name="verifyUserIsAbleToAddNewUser" finished-at="2025-09-16T11:24:23 IST" duration-ms="4788" status="PASS">
+        <test-method signature="verifyUserIsAbleToSearchNewlyAddedUser()[pri:0, instance:testscripts.AdminUserTest@7e6f74c]" started-at="2025-09-18T00:20:56 IST" name="verifyUserIsAbleToSearchNewlyAddedUser" finished-at="2025-09-18T00:20:59 IST" duration-ms="2665" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUserIsAbleToAddNewUser -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscripts.AdminUserTest@7e6f74c]" started-at="2025-09-16T11:24:23 IST" name="driverQuit" finished-at="2025-09-16T11:24:23 IST" duration-ms="2" status="PASS">
+        </test-method> <!-- verifyUserIsAbleToSearchNewlyAddedUser -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscripts.AdminUserTest@7e6f74c]" started-at="2025-09-18T00:20:59 IST" name="driverQuit" finished-at="2025-09-18T00:20:59 IST" duration-ms="5" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyUserIsAbleToAddNewUser status=SUCCESS method=AdminUserTest.verifyUserIsAbleToAddNewUser()[pri:0, instance:testscripts.AdminUserTest@7e6f74c] output={null}]]]>
+                <![CDATA[[TestResult name=verifyUserIsAbleToSearchNewlyAddedUser status=SUCCESS method=AdminUserTest.verifyUserIsAbleToSearchNewlyAddedUser()[pri:0, instance:testscripts.AdminUserTest@7e6f74c] output={null}]]]>
               </value>
             </param>
           </params>

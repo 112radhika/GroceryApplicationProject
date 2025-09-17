@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
@@ -20,6 +21,8 @@ public class LoginTest extends Base {
 		loginpage.enterUsernameOnUsernameField(usernameValue); //calling methods from pageclass : LoginPage
 		loginpage.enterPasswordOnPasswordField(passwordValue);
 		loginpage.clickOnLoginButton();
+		boolean dashboarddisplay = loginpage.IsDashboardDisplayed();
+		Assert.assertTrue(dashboarddisplay,"User couldn't login with valid credentials");
 	}
 	
 	@Test
@@ -31,6 +34,9 @@ public class LoginTest extends Base {
 		loginpage.enterUsernameOnUsernameField(usernameValue); //calling methods from pageclass : LoginPage
 		loginpage.enterPasswordOnPasswordField(passwordValue);
 		loginpage.clickOnLoginButton();
+		String actual = loginpage.getPageTitle();
+		String expected = "7rmart supermarket";
+		Assert.assertEquals(actual, expected,"User was able to login with invalid username");
 	}
 	
 	@Test
@@ -42,6 +48,9 @@ public class LoginTest extends Base {
 		loginpage.enterUsernameOnUsernameField(usernameValue); //calling methods from pageclass : LoginPage
 		loginpage.enterPasswordOnPasswordField(passwordValue);
 		loginpage.clickOnLoginButton();
+		String actual = loginpage.getPageTitle();
+		String expected = "7rmart supermarket";
+		Assert.assertEquals(actual, expected,"User was able to login with invalid password");
 	}
 	
 	@Test
@@ -53,6 +62,9 @@ public class LoginTest extends Base {
 		loginpage.enterUsernameOnUsernameField(usernameValue); 
 		loginpage.enterPasswordOnPasswordField(passwordValue);
 		loginpage.clickOnLoginButton();
+		String actual = loginpage.getPageTitle();
+		String expected = "7rmart supermarket";
+		Assert.assertEquals(actual, expected,"User was able to login with invalid credentials");
 	}
 
 }
