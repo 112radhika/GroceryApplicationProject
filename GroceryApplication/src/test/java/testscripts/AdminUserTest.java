@@ -47,13 +47,15 @@ public class AdminUserTest extends Base {
 		loginpage.clickOnLoginButton();
 		HomePage homepage = new HomePage(driver);
 		homepage.clickOnAdminUsers();
-		//String newUsername = ExcelUtility.getStringData(0,0,"AdminUserPage");
+		String newUsername = ExcelUtility.getStringData(0,0,"AdminUserPage");
 		AdminUserPage adminpage = new AdminUserPage(driver);
-		RandomDataUtility randomdata = new RandomDataUtility();
 		adminpage.clickOnSearch();
-		String newUsername = randomdata.randomUsername();
 		adminpage.enterUsernameOnSearch(newUsername);
 		adminpage.clickOnSearchSubmit();
+		String actual = adminpage.getSearchedUserInTable();
+		System.out.println(actual);
+		String expected = "scotty.blick";
+		Assert.assertEquals(actual, expected,"User not found");
 			
 	}
 	

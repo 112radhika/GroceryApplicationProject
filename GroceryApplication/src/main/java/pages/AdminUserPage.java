@@ -29,6 +29,7 @@ public class AdminUserPage {
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='btn btn-rounded btn-warning']") private WebElement resetbutton;
 	@FindBy(xpath="//h1[text()='Admin Users']") private WebElement adminusertitle;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") private WebElement useraddedsuccessalert;
+	@FindBy(xpath="//td[text()='scotty.blick']") private WebElement searcheduserintable;
 		
 	public void clickOnNewButton() {
 		newbutton.click();
@@ -81,6 +82,11 @@ public class AdminUserPage {
 	public boolean userAddedSuccessAlertIsDisplayed() {
 		
 		return useraddedsuccessalert.isDisplayed();
+	}
+	
+	public String getSearchedUserInTable() {
+		
+		return searcheduserintable.getText();
 	}
 }
 	
