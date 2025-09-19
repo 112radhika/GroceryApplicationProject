@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd"> 
+<!--initially hover on https tag and click on force download to remove errors in the file -->
 <suite name="Suite">
- <listeners> 
-  <listener class-name="reportGeneration.Listeners"></listener>
- </listeners>
+<!-- add the listeners tag and then add the details in <listener> tag-->
+  <listeners> 
+    <listener class-name="reportGeneration.Listeners"></listener>
+  </listeners>
+  <parameter name="browsers" value="Firefox"></parameter>
   <test thread-count="5" name="Test">
-    <classes>
-      <class name="testscripts.HomeTest"/>
+    <classes> <!-- mention the name of the testscripts to be executed -->
+      <class name="testscripts.LoginTest">
+      	<methods> <!--selectively execute testcase-->
+      		<include name="verifyUserLoginWithValidCredentials"></include>
+      		<!--use exclude tag to selectively not execute testcase-->
+      	</methods>
+      </class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
+ 

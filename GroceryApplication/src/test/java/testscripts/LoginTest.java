@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
+import constant.Constants;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
@@ -22,7 +23,7 @@ public class LoginTest extends Base {
 		loginpage.enterPasswordOnPasswordField(passwordValue);
 		loginpage.clickOnLoginButton();
 		boolean dashboarddisplay = loginpage.IsDashboardDisplayed();
-		Assert.assertTrue(dashboarddisplay,"User couldn't login with valid credentials");
+		Assert.assertTrue(dashboarddisplay,Constants.VALIDCREDENTIALERROR); 
 	}
 	
 	@Test

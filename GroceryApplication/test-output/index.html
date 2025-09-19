@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testscripts.HomeTest" class="method navigator-link" hash-for-method="verifyUserIsAbleToLogout">verifyUserIsAbleToLogout</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="testscripts.LoginTest" class="method navigator-link" hash-for-method="verifyUserLoginWithValidCredentials">verifyUserLoginWithValidCredentials</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -121,14 +121,14 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">testscripts.HomeTest</span>
+              <span class="class-name">testscripts.LoginTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyUserIsAbleToLogout">
-                  </a> <!-- verifyUserIsAbleToLogout -->
-                  <span class="method-name">verifyUserIsAbleToLogout</span>
+                  <a name="verifyUserLoginWithValidCredentials">
+                  </a> <!-- verifyUserLoginWithValidCredentials -->
+                  <span class="method-name">verifyUserLoginWithValidCredentials</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -143,12 +143,17 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;parameter name=&quot;browsers&quot; value=&quot;Firefox&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;reportGeneration.Listeners&quot;/&gt;
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testscripts.HomeTest&quot;/&gt;
+      &lt;class name=&quot;testscripts.LoginTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;verifyUserLoginWithValidCredentials&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- testscripts.LoginTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -190,9 +195,9 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyUserIsAbleToLogout')
-data.setCell(0, 2, 'testscripts.HomeTest')
-data.setCell(0, 3, 2927);
+data.setCell(0, 1, 'verifyUserLoginWithValidCredentials')
+data.setCell(0, 2, 'testscripts.LoginTest')
+data.setCell(0, 3, 2561);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -212,9 +217,20 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">3 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">testscripts.LoginTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">verifyUserLoginWithValidUsernameAndInvalidPassword</span>
+                <br/>
+                <span class="ignored-method-name">verifyuserLoginWithInvalidUsernameAndValidPassword</span>
+                <br/>
+                <span class="ignored-method-name">verifyUserLoginWithInvalidCredentials</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -223,18 +239,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testscripts.HomeTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testscripts.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">initializeBrowser</span>
+                <span class="method-name">initializeBrowser(Firefox)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyUserIsAbleToLogout</span>
-                <span class="method-start">7756 ms</span>
+                <span class="method-name">verifyUserLoginWithValidCredentials</span>
+                <span class="method-start">6994 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">driverQuit([TestResult name=verifyUserIsAbleToLogout status=SUCCESS method=HomeTest.verifyUserIsAbleToLogout()[...)</span>
-                <span class="method-start">10705 ms</span>
+                <span class="method-name">driverQuit([TestResult name=verifyUserLoginWithValidCredentials status=SUCCESS method=LoginTest.verifyUserLogin...)</span>
+                <span class="method-start">9566 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

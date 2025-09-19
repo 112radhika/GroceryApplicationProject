@@ -16,10 +16,10 @@ public class Listeners implements ITestListener {
 	 ExtentTest test;
 	 ExtentReports extent = ExtentReportUtility.createExtentReports(); 
 	 ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
-//ITestListener - interface
-//onTestStart,onTestSuccess etc methods in ITestListener
+	 //ITestListener - TestNG interface
+	 //TestNG will automatically trigger these methods - onTestStart,onTestSuccess etc
 	 public void onTestStart(ITestResult result) {
-//onTestStart invokes automatically before test execution. Fetch the name of the method and attach to the report.
+	 //onTestStart invokes automatically before test execution. Fetch the name of the method and attach to the report.
 	 ITestListener.super.onTestStart(result);
 	 test = extent.createTest(result.getMethod().getMethodName());
 	 extentTest.set(test);
@@ -27,14 +27,14 @@ public class Listeners implements ITestListener {
 	 }
 
 	 public void onTestSuccess(ITestResult result) {
-//onTestSuccess invokes when the testcase is passed. 
+	 //onTestSuccess invokes when the testcase is passed. Logs “Test Passed” in Extent report.
 	 ITestListener.super.onTestSuccess(result);
 	 extentTest.get().log(Status.PASS, "Test Passed");
 
 	 }
 
 	 public void onTestFailure(ITestResult result) {
-	//onTestFailure invokes when the testcase is failed. 
+	 //onTestFailure invokes when the testcase is failed. Logs failure + the exception/stack trace in the Extent report
 	 ITestListener.super.onTestFailure(result);
 
 	 extentTest.get().log(Status.FAIL, "Test Failed");
@@ -70,7 +70,7 @@ public class Listeners implements ITestListener {
 	 }
 
 	 public void onTestSkipped(ITestResult result) {
-//onTestSkipped invokes when the testcase is skipped.
+	 //onTestSkipped invokes when the testcase is skipped. Logs “Test Skipped” in Extent report.
 	 ITestListener.super.onTestSkipped(result);
 	 extentTest.get().log(Status.SKIP, "Test Skipped");
 	 String testMethodName = result.getMethod().getMethodName();
@@ -91,10 +91,11 @@ public class Listeners implements ITestListener {
 
 	 ITestListener.super.onStart(context);
 	 }
-
+	 
+	 //Triggered after all tests in a suite are finished.
 	 public void onFinish(ITestContext context) {
-//flush - ensures proper execution of above cases and logged into report. report won't be generated properly if flush is not used
 	 ITestListener.super.onFinish(context);
+	 //flush - ensures proper execution of above cases and logged into report. Report won't be generated properly if flush is not used
 	 extent.flush();
 	 }
 	
