@@ -19,8 +19,9 @@ public class Base {
 	
 	public WebDriver driver;
 	
-	@Parameters("browsers")
-	@BeforeMethod
+	@Parameters("browsers") //based on the browsers value given in testng.xml, execution will happen in chrome/firefox or edge
+	@BeforeMethod(alwaysRun=true)
+	//@Parameters("browsers")
 	public void initializeBrowser(String browsers) throws Exception {
 		if(browsers.equalsIgnoreCase("Chrome")) {
 			driver = new ChromeDriver();
@@ -30,10 +31,8 @@ public class Base {
 
 		}
 		else if(browsers.equalsIgnoreCase("Edge")) {
-			WebDriverManager.edgedriver()
-		    .clearResolutionCache()
-		    .forceDownload()
-		    .setup();
+			WebDriverManager.edgedriver();
+		   
 			driver = new EdgeDriver();
 		}
 		else {
@@ -44,7 +43,7 @@ public class Base {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); //Duration - predefined class
 	}
 	//ITestResult - interface - that stores test execution details
-	@AfterMethod
+	@AfterMethod(alwaysRun=true)
 	public void driverQuit(ITestResult iTestResult) throws IOException {
 
 		if (iTestResult.getStatus() == ITestResult.FAILURE) { //getStatus()-returns whether the test is Failed/Passed/Skipped

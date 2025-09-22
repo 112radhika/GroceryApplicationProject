@@ -2,9 +2,11 @@ package testscripts;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
+import constant.Constants;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -22,6 +24,8 @@ public class HomeTest extends Base {
 		HomePage homepage = new HomePage(driver);
 		homepage.clickOnAdmin();
 		homepage.clickOnLogout();
+		boolean adminuserdisplay = homepage.IsAdminUsersDisplayed();
+		Assert.assertTrue(adminuserdisplay, Constants.USERNOTLOGGEDOUTERROR);
 	}
 
 }

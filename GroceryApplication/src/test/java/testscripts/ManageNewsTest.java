@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
+import constant.Constants;
 import pages.AdminUserPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -32,7 +33,7 @@ public class ManageNewsTest extends Base{
 		managenews.enterNewsInTextbox(newlyAddednews);
 		managenews.clickOnSaveNews();
 		boolean newsaddedsuccessalert = managenews.IsnewsAlertSuccessDisplayed();
-		Assert.assertTrue(newsaddedsuccessalert,"News is not added successfully");
+		Assert.assertTrue(newsaddedsuccessalert,Constants.NEWNEWSADDEDERROR);
 				
 		
 	}
@@ -53,7 +54,7 @@ public class ManageNewsTest extends Base{
 		managenews.enterTextInManageNewsSearchTextBox(newlyAddednews);
 		managenews.clickOnSearchAfterEnteringNews();
 		boolean searchednewstext = managenews.searchedNewsIsDisplayedInTable();
-		Assert.assertTrue(searchednewstext, "Searched text not found");
+		Assert.assertTrue(searchednewstext, Constants.NEWSNOTFOUND);
 	}
 	
 	@Test
@@ -70,7 +71,7 @@ public class ManageNewsTest extends Base{
 		managenews.clickOnManageNewsResetButton();
 		String actual = managenews.getManageNewsPagetitle();
 		String expected = "Manage News";
-		Assert.assertEquals(actual, expected,"User landed on a different page after clicking Manage News reset button!");
+		Assert.assertEquals(actual, expected,Constants.NEWSRESETBUTTONERROR);
 		
 	}
 	

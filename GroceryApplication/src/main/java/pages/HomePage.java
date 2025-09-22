@@ -19,7 +19,7 @@ public class HomePage {
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']") private WebElement logout;
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']/i[@class='fas fa-arrow-circle-right']") private WebElement adminuser;
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']") private WebElement managenews;
-
+	@FindBy(xpath="//p[text()='Admin Users']") private WebElement adminusers;
 	
 	public void clickOnAdmin() {
 		
@@ -40,6 +40,11 @@ public class HomePage {
 	public void clickOnManageNews() {
 		
 		managenews.click();
+	}
+	
+	public boolean IsAdminUsersDisplayed() {
+		
+		return adminuser.isDisplayed();
 	}
 	
 

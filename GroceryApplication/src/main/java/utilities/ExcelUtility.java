@@ -17,7 +17,7 @@ public class ExcelUtility {
 	public static String getStringData(int a,int b, String sheet) throws IOException {
 		// a is row ,b is column or cell, sheet is name of the sheet in the excel
 		//FileInputStream, XSSFRow, XSSFCell - inbuilt class
-		f=new FileInputStream("C:\\Users\\112ra\\eclipse-workspace\\GroceryApplication\\src\\test\\resources\\testdata.xlsx");//Copy as path - the file location where it is saved
+		f=new FileInputStream("C:\\Users\\112ra\\git\\GroceryApplicationProject\\GroceryApplication\\src\\test\\resources\\Testdata.xlsx");//Copy as path - the file location where it is saved
 		w=new XSSFWorkbook(f);
 		s=w.getSheet(sheet);
 		XSSFRow r=s.getRow(a);
@@ -27,7 +27,7 @@ public class ExcelUtility {
 	}
 
 	public static String getIntegerData(int a,int b, String sheet) throws IOException { 
-		f=new FileInputStream("C:\\Users\\112ra\\eclipse-workspace\\GroceryApplication\\src\\test\\resources\\testdata.xlsx");
+		f=new FileInputStream("C:\\Users\\112ra\\git\\GroceryApplicationProject\\GroceryApplication\\src\\test\\resources\\Testdata.xlsx");
 		w=new XSSFWorkbook(f); //get file name
 		s=w.getSheet(sheet); // get sheet name
 		XSSFRow r=s.getRow(a); // get row
@@ -37,5 +37,5 @@ public class ExcelUtility {
 	
 	}
 
-
+	
 }

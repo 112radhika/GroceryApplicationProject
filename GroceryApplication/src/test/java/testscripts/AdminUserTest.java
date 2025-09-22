@@ -1,11 +1,13 @@
 package testscripts;
 
+import java.io.Console;
 import java.io.IOException;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
+import constant.Constants;
 import pages.AdminUserPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -34,7 +36,7 @@ public class AdminUserTest extends Base {
 		adminpage.selectUserTypeForNewUser();
 		adminpage.clickOnSaveNewUser();	
 		boolean useralertsuccess = adminpage.userAddedSuccessAlertIsDisplayed();
-		Assert.assertTrue(useralertsuccess, "User is not added successfully");
+		Assert.assertTrue(useralertsuccess, Constants.NEWUSERADDEDERROR);
 	}
 	
 	@Test
@@ -55,7 +57,7 @@ public class AdminUserTest extends Base {
 		String actual = adminpage.getSearchedUserInTable();
 		System.out.println(actual);
 		String expected = "scotty.blick";
-		Assert.assertEquals(actual, expected,"User not found");
+		Assert.assertEquals(actual, expected,Constants.USERNOTFOUNDERROR);
 			
 	}
 	
@@ -73,7 +75,7 @@ public class AdminUserTest extends Base {
 		adminpage.clickOnResetButton();
 		String actual = adminpage.getAdminUserPageTitle();
 		String expected = "Admin Users";
-		Assert.assertEquals(actual, expected,"User landed on a different page after clicking reset button on Admin User page!");
+		Assert.assertEquals(actual, expected,Constants.USERRESETBUTTONERROR);
 		
 	}
 		

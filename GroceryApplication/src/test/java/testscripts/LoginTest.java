@@ -14,7 +14,7 @@ import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
 	
-	@Test
+	@Test(groups= {"smoke"})
 	public void verifyUserLoginWithValidCredentials() throws IOException {
 		String usernameValue = ExcelUtility.getStringData(0,0,"LoginPage");//getting the usernameValue value from excel
 		String passwordValue = ExcelUtility.getStringData(0,1,"LoginPage");// getting the passwordValue value from excel
@@ -37,7 +37,7 @@ public class LoginTest extends Base {
 		loginpage.clickOnLoginButton();
 		String actual = loginpage.getPageTitle();
 		String expected = "7rmart supermarket";
-		Assert.assertEquals(actual, expected,"User was able to login with invalid username");
+		Assert.assertEquals(actual, expected,Constants.INVALIDUSERNAMEERROR);
 	}
 	
 	@Test
@@ -51,10 +51,10 @@ public class LoginTest extends Base {
 		loginpage.clickOnLoginButton();
 		String actual = loginpage.getPageTitle();
 		String expected = "7rmart supermarket";
-		Assert.assertEquals(actual, expected,"User was able to login with invalid password");
+		Assert.assertEquals(actual, expected,Constants.INVALIDPASSWORDERROR);
 	}
 	
-	@Test
+	@Test(groups= {"smoke"})
 	public void verifyUserLoginWithInvalidCredentials() throws IOException {
 		
 		String usernameValue = ExcelUtility.getStringData(3,0,"LoginPage");
@@ -65,7 +65,7 @@ public class LoginTest extends Base {
 		loginpage.clickOnLoginButton();
 		String actual = loginpage.getPageTitle();
 		String expected = "7rmart supermarket";
-		Assert.assertEquals(actual, expected,"User was able to login with invalid credentials");
+		Assert.assertEquals(actual, expected,Constants.INVALIDCREDENTIALERROR);
 	}
 
 }
