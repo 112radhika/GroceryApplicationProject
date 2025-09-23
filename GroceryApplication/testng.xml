@@ -9,16 +9,8 @@
   <parameter name="browsers" value="Chrome"></parameter>
   <test thread-count="5" name="Test">
     <classes> <!-- mention the name of the testcases to be executed => packagename.testclassname -->
-      <class name="testscripts.HomeTest">
-      	<methods> <!--use include tag to selectively execute testcase-->
-      		<include name="verifyUserIsAbleToLogout"></include>
-      	</methods>
-      </class>
       <class name="testscripts.LoginTest">
-        <methods>
-          <!--use exclude tag to selectively not execute testcase-->
-          <exclude name="verifyUserLoginWithValidUsernameAndInvalidPassword"></exclude>
-        </methods>
+      
       </class>
     </classes>
   </test> <!-- Test -->
