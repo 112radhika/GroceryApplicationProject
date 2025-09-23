@@ -21,7 +21,6 @@ public class Base {
 	
 	@Parameters("browsers") //based on the browsers value given in testng.xml, execution will happen in chrome/firefox or edge
 	@BeforeMethod(alwaysRun=true)
-	//@Parameters("browsers")
 	public void initializeBrowser(String browsers) throws Exception {
 		if(browsers.equalsIgnoreCase("Chrome")) {
 			driver = new ChromeDriver();

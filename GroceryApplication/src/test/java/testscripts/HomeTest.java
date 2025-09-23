@@ -24,8 +24,9 @@ public class HomeTest extends Base {
 		HomePage homepage = new HomePage(driver);
 		homepage.clickOnAdmin();
 		homepage.clickOnLogout();
-		boolean adminuserdisplay = homepage.IsAdminUsersDisplayed();
-		Assert.assertTrue(adminuserdisplay, Constants.USERNOTLOGGEDOUTERROR);
+		String actual = loginpage.getPageTitle();
+		String expected = "7rmart supermarket";
+		Assert.assertEquals(actual, expected,Constants.USERNOTLOGGEDOUTERROR);
 	}
 
 }

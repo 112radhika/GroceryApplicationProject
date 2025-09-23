@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd"> 
 <!--initially hover on https tag and click on force download to remove errors in the file -->
-<suite name="Grouping">
-<!-- add the listeners tag and then add the details in <listener> tag-->
-  
+<suite name="Grouping">  
   <parameter name="browsers" value="Firefox"></parameter>
   <test thread-count="5" name="Test">
   <groups>

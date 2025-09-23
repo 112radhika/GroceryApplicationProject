@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-22T11:51:37 IST" name="Grouping" finished-at="2025-09-22T11:52:00 IST" duration-ms="22873">
+  <suite started-at="2025-09-22T19:12:58 IST" name="Grouping" finished-at="2025-09-22T19:13:17 IST" duration-ms="18686">
     <groups>
       <group name="smoke">
         <method signature="LoginTest.verifyUserLoginWithInvalidCredentials()[pri:0, instance:testscripts.LoginTest@3eb738bb]" name="verifyUserLoginWithInvalidCredentials" class="testscripts.LoginTest"/>
         <method signature="LoginTest.verifyUserLoginWithValidCredentials()[pri:0, instance:testscripts.LoginTest@3eb738bb]" name="verifyUserLoginWithValidCredentials" class="testscripts.LoginTest"/>
       </group> <!-- smoke -->
     </groups>
-    <test started-at="2025-09-22T11:51:37 IST" name="Test" finished-at="2025-09-22T11:52:00 IST" duration-ms="22873">
+    <test started-at="2025-09-22T19:12:58 IST" name="Test" finished-at="2025-09-22T19:13:17 IST" duration-ms="18686">
       <class name="testscripts.LoginTest">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testscripts.LoginTest@3eb738bb]" started-at="2025-09-22T11:51:37 IST" name="initializeBrowser" finished-at="2025-09-22T11:51:48 IST" duration-ms="10932" status="PASS">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testscripts.LoginTest@3eb738bb]" started-at="2025-09-22T19:12:58 IST" name="initializeBrowser" finished-at="2025-09-22T19:13:09 IST" duration-ms="10813" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,11 +22,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyUserLoginWithInvalidCredentials()[pri:0, instance:testscripts.LoginTest@3eb738bb]" started-at="2025-09-22T11:51:48 IST" name="verifyUserLoginWithInvalidCredentials" finished-at="2025-09-22T11:51:51 IST" duration-ms="2529" status="PASS">
+        <test-method signature="verifyUserLoginWithInvalidCredentials()[pri:0, instance:testscripts.LoginTest@3eb738bb]" started-at="2025-09-22T19:13:09 IST" name="verifyUserLoginWithInvalidCredentials" finished-at="2025-09-22T19:13:11 IST" duration-ms="2085" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserLoginWithInvalidCredentials -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscripts.LoginTest@3eb738bb]" started-at="2025-09-22T11:51:51 IST" name="driverQuit" finished-at="2025-09-22T11:51:51 IST" duration-ms="14" status="PASS">
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscripts.LoginTest@3eb738bb]" started-at="2025-09-22T19:13:11 IST" name="driverQuit" finished-at="2025-09-22T19:13:11 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,7 +37,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverQuit -->
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testscripts.LoginTest@3eb738bb]" started-at="2025-09-22T11:51:51 IST" name="initializeBrowser" finished-at="2025-09-22T11:51:59 IST" duration-ms="7646" status="PASS">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testscripts.LoginTest@3eb738bb]" started-at="2025-09-22T19:13:11 IST" name="initializeBrowser" finished-at="2025-09-22T19:13:15 IST" duration-ms="4591" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -48,11 +48,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyUserLoginWithValidCredentials()[pri:0, instance:testscripts.LoginTest@3eb738bb]" started-at="2025-09-22T11:51:59 IST" name="verifyUserLoginWithValidCredentials" finished-at="2025-09-22T11:52:00 IST" duration-ms="1643" status="PASS">
+        <test-method signature="verifyUserLoginWithValidCredentials()[pri:0, instance:testscripts.LoginTest@3eb738bb]" started-at="2025-09-22T19:13:15 IST" name="verifyUserLoginWithValidCredentials" finished-at="2025-09-22T19:13:17 IST" duration-ms="1115" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserLoginWithValidCredentials -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscripts.LoginTest@3eb738bb]" started-at="2025-09-22T11:52:00 IST" name="driverQuit" finished-at="2025-09-22T11:52:00 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscripts.LoginTest@3eb738bb]" started-at="2025-09-22T19:13:17 IST" name="driverQuit" finished-at="2025-09-22T19:13:17 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
