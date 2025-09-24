@@ -47,9 +47,7 @@ public class LoginTest extends Base {
 		String usernameValue = ExcelUtility.getStringData(2,0,"LoginPage");
 		String passwordValue = ExcelUtility.getStringData(2,1,"LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsernameOnUsernameField(usernameValue); //calling methods from pageclass : LoginPage
-		loginpage.enterPasswordOnPasswordField(passwordValue);
-		loginpage.clickOnLoginButton();
+		loginpage.enterUsernameOnUsernameField(usernameValue).enterPasswordOnPasswordField(passwordValue).clickOnLoginButton();
 		String actual = loginpage.getPageTitle();
 		String expected = "7rmart supermarket";
 		Assert.assertEquals(actual, expected,Constants.INVALIDPASSWORDERROR);
@@ -61,9 +59,7 @@ public class LoginTest extends Base {
 		//String usernameValue = ExcelUtility.getStringData(3,0,"LoginPage");
 		//String passwordValue = ExcelUtility.getStringData(3,1,"LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsernameOnUsernameField(usernameValue); 
-		loginpage.enterPasswordOnPasswordField(passwordValue);
-		loginpage.clickOnLoginButton();
+		loginpage.enterUsernameOnUsernameField(usernameValue).enterPasswordOnPasswordField(passwordValue).clickOnLoginButton();
 		String actual = loginpage.getPageTitle();
 		String expected = "7rmart supermarket";
 		Assert.assertEquals(actual, expected,Constants.INVALIDCREDENTIALERROR);

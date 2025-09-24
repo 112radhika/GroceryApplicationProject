@@ -16,22 +16,21 @@ import utilities.RandomDataUtility;
 
 public class ManageNewsTest extends Base{
 	
+	HomePage homepage;
+	ManageNewsPage managenews;
+	
 
 	@Test(description = "User is adding New news in Manage news page")
 	public void verifyUserIsAbleToAddNewNews() throws IOException {
 		String usernameValue = ExcelUtility.getStringData(0,0,"LoginPage");//getting the usernameValue value from excel
 		String passwordValue = ExcelUtility.getStringData(0,1,"LoginPage");// getting the passwordValue value from excel
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsernameOnUsernameField(usernameValue); //calling methods from pageclass : LoginPage
-		loginpage.enterPasswordOnPasswordField(passwordValue);
-		loginpage.clickOnLoginButton();
-		HomePage homepage = new HomePage(driver);
-		homepage.clickOnManageNews();
-		ManageNewsPage managenews = new ManageNewsPage(driver);
+		loginpage.enterUsernameOnUsernameField(usernameValue).enterPasswordOnPasswordField(passwordValue);
+		homepage = loginpage.clickOnLoginButton();
+		managenews = homepage.clickOnManageNews();
 		managenews.clickOnManageNewsNewButton();
 		String newlyAddednews = ExcelUtility.getStringData(0, 0,"ManageNewsPage");
-		managenews.enterNewsInTextbox(newlyAddednews);
-		managenews.clickOnSaveNews();
+		managenews.enterNewsInTextbox(newlyAddednews).clickOnSaveNews();
 		boolean newsaddedsuccessalert = managenews.IsnewsAlertSuccessDisplayed();
 		Assert.assertTrue(newsaddedsuccessalert,Constants.NEWNEWSADDEDERROR);
 				
@@ -43,16 +42,12 @@ public class ManageNewsTest extends Base{
 		String usernameValue = ExcelUtility.getStringData(0,0,"LoginPage");//getting the usernameValue value from excel
 		String passwordValue = ExcelUtility.getStringData(0,1,"LoginPage");// getting the passwordValue value from excel
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsernameOnUsernameField(usernameValue); //calling methods from pageclass : LoginPage
-		loginpage.enterPasswordOnPasswordField(passwordValue);
-		loginpage.clickOnLoginButton();
-		HomePage homepage = new HomePage(driver);
-		homepage.clickOnManageNews();
-		ManageNewsPage managenews = new ManageNewsPage(driver);
+		loginpage.enterUsernameOnUsernameField(usernameValue).enterPasswordOnPasswordField(passwordValue);
+		homepage = loginpage.clickOnLoginButton();
+		managenews = homepage.clickOnManageNews();
 		managenews.clickOnManageNewsSearchButton();
 		String newlyAddednews = ExcelUtility.getStringData(0, 0,"ManageNewsPage");
-		managenews.enterTextInManageNewsSearchTextBox(newlyAddednews);
-		managenews.clickOnSearchAfterEnteringNews();
+		managenews.enterTextInManageNewsSearchTextBox(newlyAddednews).clickOnSearchAfterEnteringNews();
 		boolean searchednewstext = managenews.searchedNewsIsDisplayedInTable();
 		Assert.assertTrue(searchednewstext, Constants.NEWSNOTFOUND);
 	}
@@ -62,12 +57,9 @@ public class ManageNewsTest extends Base{
 		String usernameValue = ExcelUtility.getStringData(0,0,"LoginPage");//getting the usernameValue value from excel
 		String passwordValue = ExcelUtility.getStringData(0,1,"LoginPage");// getting the passwordValue value from excel
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsernameOnUsernameField(usernameValue); //calling methods from pageclass : LoginPage
-		loginpage.enterPasswordOnPasswordField(passwordValue);
-		loginpage.clickOnLoginButton();
-		HomePage homepage = new HomePage(driver);
-		homepage.clickOnManageNews();
-		ManageNewsPage managenews = new ManageNewsPage(driver);
+		loginpage.enterUsernameOnUsernameField(usernameValue).enterPasswordOnPasswordField(passwordValue);
+		homepage = loginpage.clickOnLoginButton();
+		managenews = homepage.clickOnManageNews();
 		managenews.clickOnManageNewsResetButton();
 		String actual = managenews.getManageNewsPagetitle();
 		String expected = "Manage News";

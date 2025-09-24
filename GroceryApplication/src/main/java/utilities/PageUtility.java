@@ -41,18 +41,6 @@ public class PageUtility {
 		alert.accept();
 	}
 	
-	
-	public void clickOnRadioButton(WebElement element) {
-		
-		element.click();
-	}
-	
-	public void clickOnCheckBox(WebElement element) {
-		
-		element.click();
-		element.isSelected();
-	}
-	
 	public void javascriptScrollBy(WebDriver driver) {
 		
 		JavascriptExecutor js = (JavascriptExecutor)driver;

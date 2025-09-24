@@ -31,46 +31,55 @@ public class AdminUserPage {
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") private WebElement useraddedsuccessalert;
 	@FindBy(xpath="//td[text()='scotty.blick']") private WebElement searcheduserintable;
 		
-	public void clickOnNewButton() {
+	public AdminUserPage clickOnNewButton() {
 		newbutton.click();
+		return this;
 	}
 	
-	public void enterUsernameForNewUser(String newUsername) {
+	public AdminUserPage enterUsernameForNewUser(String newUsername) {
 		newusername.sendKeys(newUsername);
+		return this;
 	}
 	
-	public void enterPasswordForNewUser(String newPassword) {
+	public AdminUserPage enterPasswordForNewUser(String newPassword) {
 		newpassword.sendKeys(newPassword);
+		return this;
 	}
 	
-	public void selectUserTypeForNewUser() {
+	public AdminUserPage selectUserTypeForNewUser() {
 		Select select = new Select(newusertype);
 		select.selectByValue("staff");
+		return this;
 	}
 	
-	public void clickOnSaveNewUser() {
+	public AdminUserPage clickOnSaveNewUser() {
 		newsave.click();
+		return this;
 	}
 	
-	public void clickOnSearch() {
+	public AdminUserPage clickOnSearch() {
 		
 		searchbutton.click();
+		return this;
 	}
 	
-	public void enterUsernameOnSearch(String newUsername) {
+	public AdminUserPage enterUsernameOnSearch(String newUsername) {
 		
 		searchusername.sendKeys(newUsername);
+		return this;
 		
 	}
 	
-	public void clickOnSearchSubmit() {
+	public AdminUserPage clickOnSearchSubmit() {
 		
 		searchsubmit.click();
+		return this;
 	}
 	
-	public void clickOnResetButton() {
+	public AdminUserPage clickOnResetButton() {
 		
 		resetbutton.click();
+		return this;
 		
 	}
 	

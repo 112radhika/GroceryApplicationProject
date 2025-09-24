@@ -27,19 +27,22 @@ public class ManageNewsPage {
 	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']/tbody/tr") private WebElement searchednewsintable;
 	
 	
-	public void clickOnManageNewsNewButton() {
+	public ManageNewsPage clickOnManageNewsNewButton() {
 		
 		managenewsnewbutton.click();
+		return this;
 	}
 	
-	public void enterNewsInTextbox(String newlyAddednews) {
+	public ManageNewsPage enterNewsInTextbox(String newlyAddednews) {
 		
 		managenewsenternews.sendKeys(newlyAddednews);
+		return this;
 	}
 	
-	public void clickOnSaveNews() {
+	public ManageNewsPage clickOnSaveNews() {
 		
 		managenewssavenews.click();
+		return this;
 	}
 	
 	public boolean IsnewsAlertSuccessDisplayed() {
@@ -47,25 +50,29 @@ public class ManageNewsPage {
 		return newsaddedsuccessalert.isDisplayed();
 	}
 	
-	public void clickOnManageNewsSearchButton() {
+	public ManageNewsPage clickOnManageNewsSearchButton() {
 		
 		managenewssearchbutton.click();
+		return this;
 	}
 	
-	public void enterTextInManageNewsSearchTextBox(String newlyAddednews) {
+	public ManageNewsPage enterTextInManageNewsSearchTextBox(String newlyAddednews) {
 		
 		managenewsenternewsinsearch.sendKeys(newlyAddednews);
+		return this;
 	}
 	
-	public void clickOnSearchAfterEnteringNews() {
+	public ManageNewsPage clickOnSearchAfterEnteringNews() {
 		
 		managenewssearchsubmit.click();
+		return this;
 		
 	}
 	
-	public void clickOnManageNewsResetButton() {
+	public ManageNewsPage clickOnManageNewsResetButton() {
 		
 		managenewsresetbutton.click();
+		return this;
 	}
 	
 	public String getManageNewsPagetitle() {
