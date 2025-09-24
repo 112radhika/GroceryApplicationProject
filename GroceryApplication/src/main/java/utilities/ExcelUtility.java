@@ -8,6 +8,8 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import constant.Constants;
+
 public class ExcelUtility {
 	
 	static FileInputStream f; //used to read excel file 
@@ -17,7 +19,7 @@ public class ExcelUtility {
 	public static String getStringData(int a,int b, String sheet) throws IOException {
 		// a is row ,b is column or cell, sheet is name of the sheet in the excel
 		//FileInputStream, XSSFRow, XSSFCell - inbuilt class
-		f=new FileInputStream("C:\\Users\\112ra\\git\\GroceryApplicationProject\\GroceryApplication\\src\\test\\resources\\Testdata.xlsx");//Copy as path - the file location where it is saved
+		f=new FileInputStream(Constants.EXCELPATH);//Copy as path - the file location where it is saved
 		w=new XSSFWorkbook(f);
 		s=w.getSheet(sheet);
 		XSSFRow r=s.getRow(a);
@@ -27,7 +29,7 @@ public class ExcelUtility {
 	}
 
 	public static String getIntegerData(int a,int b, String sheet) throws IOException { 
-		f=new FileInputStream("C:\\Users\\112ra\\git\\GroceryApplicationProject\\GroceryApplication\\src\\test\\resources\\Testdata.xlsx");
+		f=new FileInputStream(Constants.EXCELPATH);
 		w=new XSSFWorkbook(f); //get file name
 		s=w.getSheet(sheet); // get sheet name
 		XSSFRow r=s.getRow(a); // get row

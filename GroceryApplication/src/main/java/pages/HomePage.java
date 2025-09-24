@@ -20,25 +20,29 @@ public class HomePage {
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']/i[@class='fas fa-arrow-circle-right']") private WebElement adminuser;
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']") private WebElement managenews;
 	
-	public void clickOnAdmin() {
+	public HomePage clickOnAdmin() {
 		
 		admin.click();
+		return this;
 	}
 	
-	public void clickOnLogout() {
+	public LoginPage clickOnLogout() {
 		
 		logout.click();
+		return new LoginPage(driver);
 	}
 	
 
-	public void clickOnAdminUsers() {
+	public AdminUserPage clickOnAdminUsers() {
 		
 		adminuser.click();
+		return new AdminUserPage(driver);
 	}
 	
-	public void clickOnManageNews() {
+	public ManageNewsPage clickOnManageNews() {
 		
 		managenews.click();
+		return new ManageNewsPage(driver);
 	}
 
 }

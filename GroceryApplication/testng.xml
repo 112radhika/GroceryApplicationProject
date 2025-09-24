@@ -10,7 +10,7 @@
   <test thread-count="5" name="Test">
     <classes> <!-- mention the name of the testcases to be executed => packagename.testclassname -->
       <class name="testscripts.LoginTest">
-      
+       <methods><include name="verifyUserLoginWithInvalidCredentials"></include></methods>
       </class>
     </classes>
   </test> <!-- Test -->

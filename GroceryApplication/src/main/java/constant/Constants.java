@@ -17,5 +17,9 @@ public class Constants {
 	public static final String NEWSNOTFOUND = "Searched news not found";
 	public static final String NEWSRESETBUTTONERROR = "User landed on a different page after clicking Manage News reset button!";
 	
+	public static final String EXCELPATH = System.getProperty("user.dir") + "\\src\\test\\resources\\Testdata.xlsx";
+	
+	public static final String CONFIGPATH = System.getProperty("user.dir") + "\\src\\main\\resources\\config.properties";
+	
 }
 

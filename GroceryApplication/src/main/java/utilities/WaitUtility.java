@@ -9,11 +9,37 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitUtility {
 	
+	public static final int EXPLICITWAIT = 5;
+	
 	public void waitUntilElementToBeClickable(WebDriver driver, WebElement element) {
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	
+	public void waitUntilElementToBeSelected(WebDriver driver, WebElement element) {
 
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
+		wait.until(ExpectedConditions.elementToBeSelected(element));
+	}
+	
+	public void waitUntilElementToBeVisible(WebDriver driver, WebElement element) {
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
+		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+	
+	public void waitUntilTextToBePresent(WebDriver driver, WebElement element, String text) {
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
+		wait.until(ExpectedConditions.textToBePresentInElement(element, text));
+	}
+	
+	public void waitUntilAlertIsPresent(WebDriver driver) {
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICITWAIT));
+		wait.until(ExpectedConditions.alertIsPresent());
+	}
+	
+	
 }

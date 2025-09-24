@@ -13,17 +13,17 @@ import utilities.ExcelUtility;
 
 public class HomeTest extends Base {
 	
-	@Test
+	HomePage homepage;
+	
+	@Test(description = "User logout from the application")
 	public void verifyUserIsAbleToLogout() throws IOException {
 		String usernameValue = ExcelUtility.getStringData(0,0,"LoginPage");//getting the usernameValue value from excel
 		String passwordValue = ExcelUtility.getStringData(0,1,"LoginPage");// getting the passwordValue value from excel
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsernameOnUsernameField(usernameValue); //calling methods from pageclass : LoginPage
-		loginpage.enterPasswordOnPasswordField(passwordValue);
-		loginpage.clickOnLoginButton();
-		HomePage homepage = new HomePage(driver);
+		loginpage.enterUsernameOnUsernameField(usernameValue).enterPasswordOnPasswordField(passwordValue);
+		homepage = loginpage.clickOnLoginButton();
 		homepage.clickOnAdmin();
-		homepage.clickOnLogout();
+		loginpage = homepage.clickOnLogout();
 		String actual = loginpage.getPageTitle();
 		String expected = "7rmart supermarket";
 		Assert.assertEquals(actual, expected,Constants.USERNOTLOGGEDOUTERROR);

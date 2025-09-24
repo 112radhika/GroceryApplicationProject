@@ -16,7 +16,7 @@ import utilities.RandomDataUtility;
 
 public class AdminUserTest extends Base {
 	
-	@Test
+	@Test(description = "User is creating a new user in Admin User page")
 	public void verifyUserIsAbleToAddNewUser() throws IOException {
 		String usernameValue = ExcelUtility.getStringData(0,0,"LoginPage");//getting the usernameValue value from excel
 		String passwordValue = ExcelUtility.getStringData(0,1,"LoginPage");// getting the passwordValue value from excel
@@ -39,7 +39,7 @@ public class AdminUserTest extends Base {
 		Assert.assertTrue(useralertsuccess, Constants.NEWUSERADDEDERROR);
 	}
 	
-	@Test
+	@Test(description = "User is searching the list with an existing user details")
 	public void verifyUserIsAbleToSearchNewlyAddedUser() throws IOException {
 		String usernameValue = ExcelUtility.getStringData(0,0,"LoginPage");//getting the usernameValue value from excel
 		String passwordValue = ExcelUtility.getStringData(0,1,"LoginPage");// getting the passwordValue value from excel
@@ -61,7 +61,7 @@ public class AdminUserTest extends Base {
 			
 	}
 	
-	@Test
+	@Test(description = "User clicks on Reset button in Admin user page")
 	public void verifyUserIsAbleToResetTheList() throws IOException {
 		String usernameValue = ExcelUtility.getStringData(0,0,"LoginPage");//getting the usernameValue value from excel
 		String passwordValue = ExcelUtility.getStringData(0,1,"LoginPage");// getting the passwordValue value from excel

@@ -17,7 +17,7 @@ import utilities.RandomDataUtility;
 public class ManageNewsTest extends Base{
 	
 
-	@Test
+	@Test(description = "User is adding New news in Manage news page")
 	public void verifyUserIsAbleToAddNewNews() throws IOException {
 		String usernameValue = ExcelUtility.getStringData(0,0,"LoginPage");//getting the usernameValue value from excel
 		String passwordValue = ExcelUtility.getStringData(0,1,"LoginPage");// getting the passwordValue value from excel
@@ -38,7 +38,7 @@ public class ManageNewsTest extends Base{
 		
 	}
 	
-	@Test
+	@Test(description = "User search for an existing news")
 	public void verifyUserIsAbleToSearchNewlyAddedNews() throws IOException {
 		String usernameValue = ExcelUtility.getStringData(0,0,"LoginPage");//getting the usernameValue value from excel
 		String passwordValue = ExcelUtility.getStringData(0,1,"LoginPage");// getting the passwordValue value from excel
@@ -57,7 +57,7 @@ public class ManageNewsTest extends Base{
 		Assert.assertTrue(searchednewstext, Constants.NEWSNOTFOUND);
 	}
 	
-	@Test
+	@Test(description = "User clicks on Reset button in manage news page")
 	public void verifyUserIsAbleToResetManageNews() throws IOException {
 		String usernameValue = ExcelUtility.getStringData(0,0,"LoginPage");//getting the usernameValue value from excel
 		String passwordValue = ExcelUtility.getStringData(0,1,"LoginPage");// getting the passwordValue value from excel
