@@ -8,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.PageUtility;
+
 public class AdminUserPage {
 	
 	public WebDriver driver;
@@ -47,8 +49,10 @@ public class AdminUserPage {
 	}
 	
 	public AdminUserPage selectUserTypeForNewUser() {
-		Select select = new Select(newusertype);
-		select.selectByValue("staff");
+		//Select select = new Select(newusertype);
+		//select.selectByValue("staff");
+		PageUtility page = new PageUtility();
+		page.selectDropdownWithValue(newusertype, "staff");
 		return this;
 	}
 	

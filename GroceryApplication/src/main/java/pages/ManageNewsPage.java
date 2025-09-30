@@ -1,5 +1,8 @@
 package pages;
 
+import java.awt.event.WindowStateListener;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -82,6 +85,8 @@ public class ManageNewsPage {
 	
 	public boolean searchedNewsIsDisplayedInTable() {
 		
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,100)","");
 		return searchednewsintable.isDisplayed();
 	}
 	

@@ -27,7 +27,7 @@ public class Listeners implements ITestListener {
 	 }
 
 	 public void onTestSuccess(ITestResult result) {
-	 //onTestSuccess invokes when the testcase is passed. Logs “Test Passed” in Extent report.
+	 //onTestSuccess invokes when the testcase is passed. Logs "Test Passed" in Extent report.
 	 ITestListener.super.onTestSuccess(result);
 	 extentTest.get().log(Status.PASS, "Test Passed");
 
@@ -70,7 +70,7 @@ public class Listeners implements ITestListener {
 	 }
 
 	 public void onTestSkipped(ITestResult result) {
-	 //onTestSkipped invokes when the testcase is skipped. Logs “Test Skipped” in Extent report.
+	 //onTestSkipped invokes when the testcase is skipped. Logs "Test Skipped" in Extent report.
 	 ITestListener.super.onTestSkipped(result);
 	 extentTest.get().log(Status.SKIP, "Test Skipped");
 	 String testMethodName = result.getMethod().getMethodName();

@@ -49,6 +49,7 @@ public class ManageNewsTest extends Base{
 		String newlyAddednews = ExcelUtility.getStringData(0, 0,"ManageNewsPage");
 		managenews.enterTextInManageNewsSearchTextBox(newlyAddednews).clickOnSearchAfterEnteringNews();
 		boolean searchednewstext = managenews.searchedNewsIsDisplayedInTable();
+		System.out.println(searchednewstext);
 		Assert.assertTrue(searchednewstext, Constants.NEWSNOTFOUND);
 	}
 	

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.WaitUtility;
+
 public class HomePage {
 	
 	public WebDriver driver;
@@ -41,6 +43,8 @@ public class HomePage {
 	
 	public ManageNewsPage clickOnManageNews() {
 		
+		WaitUtility wait = new WaitUtility();
+		wait.waitUntilElementToBeClickable(driver,managenews);
 		managenews.click();
 		return new ManageNewsPage(driver);
 	}

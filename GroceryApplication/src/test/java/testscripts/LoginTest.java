@@ -18,7 +18,7 @@ public class LoginTest extends Base {
 	
 	HomePage homepage;
 	
-	@Test(groups= {"smoke"},priority = 1, description = "User login using valid username and valid password")
+	@Test(groups= {"smoke"},priority = 1, description = "User login using valid username and valid password", retryAnalyzer = retry.Retry.class)
 	public void verifyUserLoginWithValidCredentials() throws IOException {
 		String usernameValue = ExcelUtility.getStringData(0,0,"LoginPage");//getting the usernameValue value from excel
 		String passwordValue = ExcelUtility.getStringData(0,1,"LoginPage");// getting the passwordValue value from excel
